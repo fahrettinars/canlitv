@@ -556,22 +556,14 @@ html { scrollbar-color: #2a2a2a var(--bg); }
   display: flex;
   justify-content: center;
 }
-.ad-slot .ad-label {
+.ad-inner {
   width: 100%;
   max-width: 970px;
-  min-height: 90px;
-  display: grid;
-  place-items: center;
-  border: 1px dashed var(--border-hi);
-  border-radius: 10px;
-  color: var(--muted);
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 4px;
-  background: repeating-linear-gradient(
-    45deg, transparent, transparent 10px,
-    rgba(128, 128, 128, 0.04) 10px, rgba(128, 128, 128, 0.04) 20px
-  );
+  min-height: 90px;              /* reklam yüklenene kadar yer tutar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 /* ============ RESPONSIVE ============ */
@@ -622,7 +614,7 @@ html { scrollbar-color: #2a2a2a var(--bg); }
   .site-footer { padding: 40px 20px 46px; }
   .to-top { right: 16px; bottom: 16px; width: 44px; height: 44px; }
   .ad-slot { padding-left: 16px; padding-right: 16px; margin: 18px auto; }
-  .ad-slot .ad-label { min-height: 70px; letter-spacing: 3px; }
+  .ad-inner { min-height: 70px; }
 }
 
 @media (max-width: 340px) {
