@@ -1,0 +1,6 @@
+# İşletim sistemi / editör dosyaları
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+*.log

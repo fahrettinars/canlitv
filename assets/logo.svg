@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 80" width="340" height="80" font-family="Archivo, Arial, sans-serif">
+  <!-- işaret -->
+  <rect x="4" y="18" width="44" height="44" rx="12" fill="none" stroke="#0a0a0a" stroke-width="3"/>
+  <path d="M20 30 L36 40 L20 50 Z" fill="#8fb600"/>
+  <circle cx="40" cy="26" r="4.5" fill="#8fb600"/>
+  <!-- yazı -->
+  <text x="64" y="52" font-size="40" font-weight="900" letter-spacing="-1" fill="#0a0a0a">CANLI<tspan fill="#8fb600">TV</tspan></text>
+</svg>

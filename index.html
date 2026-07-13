@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CANLI TV — Türkiye'nin Tüm Kanalları</title>
+  <meta name="description" content="Türkiye'deki tüm TV kanallarının resmi canlı yayınlarına tek ekrandan ulaş." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    // Kayıtlı temayı anında uygula (titremeyi önler)
+    if (localStorage.getItem("canlitv_tema") === "light")
+      document.documentElement.setAttribute("data-theme", "light");
+  </script>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <a href="#" class="nav-brand">
+      <svg class="brand-mark" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect class="bm-box" x="2.5" y="2.5" width="39" height="39" rx="11" stroke-width="2.5" />
+        <path class="bm-accent" d="M18 14.5 L30.5 22 L18 29.5 Z" />
+        <circle class="bm-accent bm-dot" cx="33.5" cy="11" r="3.6" />
+      </svg>
+      <span class="brand-word">CANLI<span>TV</span></span>
+    </a>
+    <div class="nav-right">
+      <button id="themeToggle" class="theme-toggle" type="button" title="Tema değiştir" aria-label="Tema değiştir">🌙</button>
+      <button id="favShortcut" class="nav-fav" type="button" title="Favorilerim">
+        <span class="star">★</span> FAVORİLER
+        <span id="favCount" class="nav-fav-count">0</span>
+      </button>
+      <div class="nav-search">
+        <input type="search" id="searchInput" placeholder="KANAL ARA" autocomplete="off" aria-label="Kanal ara" />
+        <button id="searchClear" class="search-clear" type="button" aria-label="Aramayı temizle" hidden>×</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero">
+    <div class="hero-meta">
+      <span class="live-pill"><span class="dot"></span> CANLI YAYIN</span>
+      <span class="hero-count"><b id="totalCount">0</b> KANAL</span>
+    </div>
+    <h1 class="hero-title">
+      TÜRKİYE'NİN<br />
+      TÜM KANALLARI<span class="accent">.</span>
+    </h1>
+    <p class="hero-sub">
+      Ulusaldan spora, haberden çocuğa — Türkiye'nin bütün TV kanalları
+      <strong>tek ekranda.</strong> Aradığın kanalı saniyeler içinde bul,
+      tek tıkla <strong>resmi canlı yayınına</strong> git.
+    </p>
+  </header>
+
+  <!-- ===== KAYAN ŞERİT ===== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack"></div>
+  </div>
+
+  <!-- ===== KATEGORILER ===== -->
+  <div class="cat-wrap">
+    <nav class="categories" id="categoryBar" aria-label="Kategoriler"></nav>
+  </div>
+
+  <!-- ===== IZGARA ===== -->
+  <main class="container">
+    <div class="section-head">
+      <h2 id="sectionTitle">TÜM KANALLAR</h2>
+      <span id="resultCount" class="result-count"></span>
+    </div>
+    <div class="grid" id="channelGrid"></div>
+    <p class="empty-state" id="emptyState" hidden>Aramanıza uygun kanal bulunamadı.</p>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="foot-big">CANLI<span>TV</span></div>
+    <p>
+      Bu site kanal içeriği barındırmaz. Her kanal, ilgili yayıncının
+      <strong>resmi canlı yayın sayfasına</strong> yönlendirir.
+    </p>
+  </footer>
+
+  <!-- Yukarı çık -->
+  <button id="toTop" class="to-top" aria-label="Yukarı çık" title="Yukarı çık">↑</button>
+
+  <script src="js/channels.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

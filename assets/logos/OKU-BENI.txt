@@ -1,0 +1,24 @@
+KENDİ LOGONU EKLE
+=================
+
+Aşağıdaki kanalların logosu bu klasöre bırakılan dosyalardan gelir.
+Logoyu eklemek için: PNG dosyasını TAM OLARAK bu isimle bu klasöre kopyala.
+Dosyayı atınca site otomatik gösterir (sayfayı Ctrl+F5 ile yenile).
+Dosya yoksa, kanal şık bir baş-harf rozetiyle görünmeye devam eder (sorun olmaz).
+
+İpucu: Kare (ör. 200x200) ve şeffaf arka planlı PNG en iyi durur.
+
+DOSYA ADLARI:
+  Sözcü TV         ->  sozcu-tv.png
+  Ekol TV          ->  ekol-tv.png
+  Anadolu Ajansı   ->  anadolu-ajansi.png
+  Tabii Spor       ->  tabii-spor.png
+  Yumurcak TV      ->  yumurcak-tv.png
+  TRT Nağme        ->  trt-nagme.png
+  Dream TV         ->  dream-tv.png
+  Mekke TV         ->  mekke-tv.png
+  İz TV            ->  iz-tv.png
+  Hilal TV         ->  hilal-tv.png
+
+Not: Farklı bir isim/uzantı kullanmak istersen js/channels.js içindeki
+ilgili kanalın "logo" alanını da o isme göre güncelle.
