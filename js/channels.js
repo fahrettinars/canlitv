@@ -107,7 +107,6 @@ const KANALLAR = [
   { ad: "Number One",      kategori: "Müzik", logo: L("nr1-tr.png"),       url: "https://www.numberone.com.tr/canli-yayin" },
   { ad: "Number One Türk", kategori: "Müzik", logo: L("nr1-turk-tr.png"),  url: "https://www.numberone.com.tr/number-one-turk-canli-yayin" },
   { ad: "PowerTürk TV",    kategori: "Müzik", logo: L("powerturk-tr.png"), url: "https://www.powerturk.com.tr/tv" },
-  { ad: "Power TV",        kategori: "Müzik", logo: L("power-tv-tr.png"),  url: "#" },
   { ad: "Dream TV",        kategori: "Müzik", logo: "assets/logos/dream-tv.jpg", url: "https://www.dreamtv.com.tr/canli-yayin" },
   { ad: "Dream Türk",      kategori: "Müzik", logo: L("dream-turk-tr.png"),url: "https://www.dreamturk.com.tr/canli-yayin" },
 

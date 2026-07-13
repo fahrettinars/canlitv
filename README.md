@@ -1,34 +1,53 @@
-# Canlı TV — Kanal Portalı
+# CanlıTV — Kanal Portalı
 
-Tarayıcıdan açılan basit bir **canlı TV portalı**. İçerik barındırmaz; her kanal kartına
-tıklandığında o kanalın **kendi resmi canlı yayın sayfası yeni sekmede açılır**. Böylece
-telif sorunu oluşmaz.
+Türkiye'deki TV kanallarının **resmi canlı yayınlarına** yönlendiren modern bir web portalı.
+Site içerik barındırmaz; her kanal, ilgili yayıncının resmi canlı yayın sayfasına
+(veya ücretli kanallarda sağlayıcının abonelik sayfasına) yeni sekmede yönlendirir.
 
-## Nasıl açılır?
-- `index.html` dosyasına çift tıklaman yeterli.
-- (İsteğe bağlı) Yerel sunucuyla: bu klasörde `python -m http.server` çalıştırıp
-  tarayıcıda `http://localhost:8000` adresini aç.
+🌐 **Canlı site:** https://fahrettinars.github.io/canlitv/
 
-## Kanal ekleme / düzenleme
-Tüm kanallar `js/channels.js` dosyasındaki `KANALLAR` dizisinde tutulur. Yeni kanal eklemek
-için diziye bir satır ekle:
+## Özellikler
+- **78 kanal**, 8 kategori (Ulusal, Haber, Ekonomi, Spor, Belgesel, Çocuk, Müzik, Dini)
+- Kanal logoları, arama ve kategori filtresi (sayaçlı)
+- **Favoriler** — yıldızla, tarayıcı hafızasında (localStorage) saklanır
+- **Aydınlık / karanlık tema** düğmesi (tercih hatırlanır)
+- **Ücretli kanal işareti** — 🔒 ABONELİK rozeti + "ABONELİK SAYFASI" butonu
+- Modernist tasarım: dev tipografi, lime vurgu, kayan şerit, scroll animasyonları
+- Tamamen **responsive** (mobil uyumlu), klavye kısayolları (`/` ara, `Esc` temizle)
 
-```js
-{ ad: "Kanal Adı", kategori: "Haber", logo: "", url: "https://kanalin-resmi-canli-sayfasi" }
+## Dosya yapısı
+```
+index.html          Sayfa iskeleti
+css/style.css       Tasarım (koyu/aydınlık tema, responsive)
+js/channels.js      KANAL LİSTESİ — buradan düzenlenir
+js/app.js           Arama, filtre, favoriler, tema, render
+assets/favicon.svg  Sekme ikonu
+assets/logo.svg     Bağımsız logo
+assets/logos/       Elle eklenen kanal logoları
 ```
 
-- **ad**: Kartta görünecek kanal adı.
-- **kategori**: Örn. `Ulusal`, `Haber`, `Spor`, `Çocuk`, `Müzik`, `Dini`. Yeni bir kategori
-  yazarsan üstteki filtre çubuğunda otomatik görünür.
-- **logo**: (opsiyonel) Logo resmi URL'si. Boş bırakırsan kanal adının baş harfi renkli bir
-  rozet olarak gösterilir.
-- **url**: Kanalın **resmi/izinli** canlı yayın sayfasının linki. Tıklanınca burası açılır.
+## Kanal ekleme / düzenleme
+Tüm kanallar `js/channels.js` içindeki `KANALLAR` dizisindedir. Örnek kayıt:
+```js
+{ ad: "Kanal Adı", kategori: "Haber", logo: L("dosya-tr.png"), url: "https://resmi-canli-yayin" }
+```
+Logo yardımcıları:
+- `L("dosya.png")` → Türkiye logo deposundan
+- `G("ulke/dosya.png")` → diğer ülke klasörlerinden (uluslararası kanallar)
+- `F("site.com")` → sitenin ikonu (favicon)
+- `"assets/logos/ad.png"` → kendi eklediğin yerel logo
 
-> Not: `channels.js` içindeki başlangıç linkleri örnektir; kendi doğru resmi linklerinle
-> güncellemen önerilir.
+Ek alanlar:
+- `ucretli: true` → 🔒 ABONELİK rozeti gösterir, buton "ABONELİK SAYFASI" olur
+- `zoom: 1.28` → logoyu büyütür / kenar beyazlıklarını kırpar
 
-## Dosyalar
-- `index.html` — sayfa iskeleti
-- `css/style.css` — koyu tema, responsive tasarım
-- `js/channels.js` — kanal listesi (buradan düzenle)
-- `js/app.js` — arama, kategori filtresi, kart oluşturma
+## Siteyi güncelleme (yayına alma)
+Değişiklikten sonra:
+```bash
+git add . && git commit -m "güncelleme" && git push
+```
+Push'tan 1-2 dakika sonra canlı site otomatik güncellenir. Tarayıcıda görmek için `Ctrl+F5`.
+
+## Not (telif)
+Kanal içerikleri barındırılmaz; yalnızca yayıncıların **resmi** canlı yayın/abonelik
+sayfalarına link verilir.
