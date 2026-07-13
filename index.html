@@ -15,6 +15,18 @@
     if (localStorage.getItem("canlitv_tema") === "light")
       document.documentElement.setAttribute("data-theme", "light");
   </script>
+
+  <!-- ============================================================
+       GOOGLE ADSENSE — REKLAM
+       KURULUM: adsense.google.com'dan onay alınca aşağıdaki satırdaki
+       ca-pub-XXXXXXXXXXXXXXXX kısmını KENDİ yayıncı numaranla değiştir
+       ve bu <script> satırının başındaki/sonundaki yorum işaretlerini kaldır.
+       (Detaylı adımlar README ve sohbette anlatıldı.)
+  ============================================================ -->
+  <!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  -->
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -32,7 +44,7 @@
     <div class="nav-right">
       <button id="themeToggle" class="theme-toggle" type="button" title="Tema değiştir" aria-label="Tema değiştir">🌙</button>
       <button id="favShortcut" class="nav-fav" type="button" title="Favorilerim">
-        <span class="star">★</span> FAVORİLER
+        <span class="star">★</span><span class="fav-label"> FAVORİLER</span>
         <span id="favCount" class="nav-fav-count">0</span>
       </button>
       <div class="nav-search">
@@ -64,6 +76,19 @@
     <div class="marquee-track" id="marqueeTrack"></div>
   </div>
 
+  <!-- ===== REKLAM (üst) ===== -->
+  <aside class="ad-slot" aria-label="Reklam alanı">
+    <span class="ad-label">REKLAM</span>
+    <!-- AdSense birimi (onay sonrası bu yorumu aç, ca-pub ve data-ad-slot değerlerini gir):
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="0000000000"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </aside>
+
   <!-- ===== KATEGORILER ===== -->
   <div class="cat-wrap">
     <nav class="categories" id="categoryBar" aria-label="Kategoriler"></nav>
@@ -78,6 +103,19 @@
     <div class="grid" id="channelGrid"></div>
     <p class="empty-state" id="emptyState" hidden>Aramanıza uygun kanal bulunamadı.</p>
   </main>
+
+  <!-- ===== REKLAM (alt) ===== -->
+  <aside class="ad-slot ad-slot-bottom" aria-label="Reklam alanı">
+    <span class="ad-label">REKLAM</span>
+    <!-- AdSense birimi (onay sonrası bu yorumu aç, ca-pub ve data-ad-slot değerlerini gir):
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="1111111111"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </aside>
 
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
