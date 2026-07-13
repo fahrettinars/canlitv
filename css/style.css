@@ -548,6 +548,52 @@ body {
 ::-webkit-scrollbar-thumb:hover { background: var(--lime); }
 html { scrollbar-color: #2a2a2a var(--bg); }
 
+/* ============ İÇERİK SAYFALARI (Hakkımızda / Gizlilik) ============ */
+.page {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 64px 40px 40px;
+}
+.page-title {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 30px;
+}
+.page-title .accent { color: var(--accent-ink); }
+.page-content { color: var(--sub); font-size: 1.06rem; line-height: 1.75; }
+.page-content h2 {
+  color: var(--text);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  margin: 32px 0 12px;
+}
+.page-content p { margin-bottom: 14px; }
+.page-content strong { color: var(--text); }
+.page-content a { color: var(--accent-ink); text-decoration: underline; }
+
+/* Footer linkleri */
+.foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin: 18px 0 6px;
+}
+.foot-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.18s;
+}
+.foot-links a:hover { color: var(--accent-ink); }
+
 /* ============ REKLAM ALANI ============ */
 .ad-slot {
   max-width: 1400px;
