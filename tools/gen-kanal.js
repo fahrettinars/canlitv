@@ -103,6 +103,11 @@ function kanalSayfasi(k, digerleri) {
   <meta property="og:title" content="${k.ad} Canlı İzle | CanlıTV" />
   <meta property="og:description" content="${k.ad} canlı yayınını tek tıkla izle." />
   <meta property="og:url" content="${SITE}/kanal/${s}.html" />
+  <meta property="og:image" content="${SITE}/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="${SITE}/assets/og-image.png" />
   <script>
     if (localStorage.getItem("canlitv_tema") === "light")
       document.documentElement.setAttribute("data-theme", "light");
