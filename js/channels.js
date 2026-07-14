@@ -117,3 +117,6 @@ const KANALLAR = [
   { ad: "Semerkand TV",   kategori: "Dini", logo: L("semerkand-tv-tr.png"), url: "https://www.semerkandtv.com.tr/canli-yayin" },
   { ad: "Hilal TV",       kategori: "Dini", logo: "assets/logos/hilal-tv.jpg", url: "https://www.youtube.com/@HILALTV-OFFICIAL/live" },
 ];
+
+// Node.js (sayfa üretici betik) için dışa aktarım — tarayıcıda etkisi yok
+if (typeof module !== "undefined" && module.exports) module.exports = { KANALLAR };
