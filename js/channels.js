@@ -116,6 +116,49 @@ const KANALLAR = [
   { ad: "TV 5",           kategori: "Dini", logo: L("tv5-tr.png"),          url: "https://www.tv5.com.tr/canli-yayin" },
   { ad: "Semerkand TV",   kategori: "Dini", logo: L("semerkand-tv-tr.png"), url: "https://www.semerkandtv.com.tr/canli-yayin" },
   { ad: "Hilal TV",       kategori: "Dini", logo: "assets/logos/hilal-tv.jpg", url: "https://www.youtube.com/@HILALTV-OFFICIAL/live" },
+
+  // ================= YENİ EKLENENLER =================
+  // --- Ulusal ---
+  { ad: "A2",             kategori: "Ulusal", logo: L("a2-tr.png"),           url: "https://www.a2tv.com.tr/canli-yayin" },
+  { ad: "TRT Türk",       kategori: "Ulusal", logo: L("trt-turk-tr.png"),     url: "https://www.trtizle.com/canli/tv/trt-turk" },
+  { ad: "TRT Avaz",       kategori: "Ulusal", logo: L("trt-avaz-tr.png"),     url: "https://www.trtizle.com/canli/tv/trt-avaz" },
+  { ad: "TRT Kurdî",      kategori: "Ulusal", logo: L("trt-kurdi-tr.png"),    url: "https://www.trtizle.com/canli/tv/trt-kurdi" },
+  { ad: "TRT Arabi",      kategori: "Ulusal", logo: L("trt-arabi-tr.png"),    url: "https://www.trtizle.com/canli/tv/trt-arabi" },
+  // --- Haber ---
+  { ad: "A News",         kategori: "Haber", logo: L("a-news-tr.png"),        url: "https://www.anews.com.tr/canli-yayin" },
+  { ad: "Ülke TV",        kategori: "Haber", logo: L("ulke-tv-tr.png"),       url: "https://www.ulketv.com.tr/canli-yayin" },
+  { ad: "TVNET",          kategori: "Haber", logo: L("tvnet-tr.png"),         url: "https://www.tvnet.com.tr/canli-yayin" },
+  { ad: "Akit TV",        kategori: "Haber", logo: L("akit-tv-tr.png"),       url: "https://www.akittv.com.tr/canli-yayin" },
+  { ad: "Kanal B",        kategori: "Haber", logo: L("kanal-b-tr.png"),       url: "https://www.kanalb.com.tr/canli-yayin" },
+  { ad: "Bengü Türk",     kategori: "Haber", logo: L("bengu-turk-tr.png"),    url: "https://www.benguturk.com/canli-yayin" },
+  // --- Spor ---
+  { ad: "TRT Spor 2",     kategori: "Spor", logo: L("trt-spor-2-tr.png"),     url: "https://www.trtizle.com/canli/tv/trt-spor-2" },
+  { ad: "Sports TV",      kategori: "Spor", logo: L("sports-tv-tr.png"),      url: "https://www.sportstv.com.tr/canli-yayin" },
+  { ad: "TJK TV",         kategori: "Spor", logo: L("tjk-tv-tr.png"),         url: "https://tjktv.tjk.org" },
+  { ad: "Fenerbahçe TV",  kategori: "Spor", logo: L("fenerbahce-tv-tr.png"),  url: "https://www.fenerbahce.org/fbtv", ucretli: true },
+  { ad: "Galatasaray TV", kategori: "Spor", logo: L("galatasaray-tv-tr.png"), url: "https://www.galatasaray.org", ucretli: true },
+  { ad: "Bursaspor TV",   kategori: "Spor", logo: L("bursaspor-tv-tr.png"),   url: "https://www.bursaspor.org.tr" },
+  // --- Müzik ---
+  { ad: "NR1 Damar",      kategori: "Müzik", logo: L("nr1-damar-tr.png"),     url: "https://www.numberone.com.tr" },
+  { ad: "NR1 Aşk",        kategori: "Müzik", logo: L("nr1-ask-tr.png"),       url: "https://www.numberone.com.tr" },
+  { ad: "NR1 Dance",      kategori: "Müzik", logo: L("nr1-dance-tr.png"),     url: "https://www.numberone.com.tr" },
+  { ad: "Tatlıses TV",    kategori: "Müzik", logo: L("tatlises-tv-tr.png"),   url: "https://www.tatlisestv.com.tr/canli-yayin" },
+  { ad: "Tempo TV",       kategori: "Müzik", logo: L("tempo-tv-tr.png"),      url: "https://www.tempotv.com.tr/canli-yayin" },
+  { ad: "Ekin TV",        kategori: "Müzik", logo: L("ekin-tv-turk-tr.png"),  url: "https://www.ekintv.com.tr/canli-yayin" },
+  { ad: "Fashion One",    kategori: "Müzik", logo: L("fashion-one-tv-tr.png"), url: "https://www.fashionone.com" },
+  // --- Dini ---
+  { ad: "Dost TV",        kategori: "Dini", logo: L("dost-tv-tr.png"),        url: "https://www.dosttv.com/canli-yayin" },
+  { ad: "Lalegül TV",     kategori: "Dini", logo: L("lalegul-tv-tr.png"),     url: "https://www.lalegultv.com.tr/canli-yayin" },
+  { ad: "Berat TV",       kategori: "Dini", logo: L("berat-tv-tr.png"),       url: "https://www.berattv.com.tr/canli-yayin" },
+  { ad: "Vav TV",         kategori: "Dini", logo: L("vav-tv-tr.png"),         url: "https://www.vavtv.com.tr/canli-yayin" },
+  { ad: "Cem TV",         kategori: "Dini", logo: L("cem-tv-tr.png"),         url: "https://www.cemtv.com.tr/canli-yayin" },
+  { ad: "Kardelen TV",    kategori: "Dini", logo: L("kardelen-tv-tr.png"),    url: "https://www.kardelentv.net/canli-yayin" },
+  // --- Belgesel ---
+  { ad: "TGRT Belgesel",  kategori: "Belgesel", logo: L("tgrt-belgesel-tr.png"), url: "#" },
+  // --- Çocuk ---
+  { ad: "Çocuk Smart",    kategori: "Çocuk", logo: L("cocuk-smart-tr.png"),   url: "https://www.dsmart.com.tr", ucretli: true },
+  // --- Sinema ---
+  { ad: "Filmbox",        kategori: "Sinema", logo: L("filmbox-tr.png"),      url: "https://www.filmboxplus.com", ucretli: true },
 ];
 
 // Node.js (sayfa üretici betik) için dışa aktarım — tarayıcıda etkisi yok
