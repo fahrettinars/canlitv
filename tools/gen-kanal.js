@@ -128,7 +128,11 @@ function kanalSayfasi(k, digerleri) {
     </a>
     <div class="nav-right">
       <div class="lang-wrap">
-        <span class="lang-globe" aria-hidden="true">🌐</span>
+        <svg class="lang-globe" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8" />
+          <path d="M3 12h18" stroke="currentColor" stroke-width="1.8" />
+          <ellipse cx="12" cy="12" rx="4" ry="9" stroke="currentColor" stroke-width="1.8" />
+        </svg>
         <select id="langSelect" class="lang-select" aria-label="Dil seç" title="Dil seç"></select>
       </div>
       <a href="../index.html" class="nav-fav" style="text-decoration:none" data-i18n="back_home">← ANA SAYFA</a>
@@ -216,7 +220,11 @@ function kanallarSayfasi() {
     </a>
     <div class="nav-right">
       <div class="lang-wrap">
-        <span class="lang-globe" aria-hidden="true">🌐</span>
+        <svg class="lang-globe" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8" />
+          <path d="M3 12h18" stroke="currentColor" stroke-width="1.8" />
+          <ellipse cx="12" cy="12" rx="4" ry="9" stroke="currentColor" stroke-width="1.8" />
+        </svg>
         <select id="langSelect" class="lang-select" aria-label="Dil seç" title="Dil seç"></select>
       </div>
       <a href="index.html" class="nav-fav" style="text-decoration:none" data-i18n="back_home">← ANA SAYFA</a>

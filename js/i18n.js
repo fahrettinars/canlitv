@@ -440,7 +440,7 @@
       for (var i = 0; i < DILLER.length; i++) {
         var o = document.createElement("option");
         o.value = DILLER[i].kod;
-        o.textContent = DILLER[i].bayrak + " " + DILLER[i].ad;
+        o.textContent = DILLER[i].ad;
         sec.appendChild(o);
       }
       sec.addEventListener("change", function () { API.set(sec.value); });

@@ -166,7 +166,7 @@
     name.textContent = kanal.ad;
     const cat = document.createElement("div");
     cat.className = "cat";
-    cat.textContent = kanal.kategori;
+    cat.textContent = I.cat(kanal.kategori);
     body.append(name, cat);
 
     const watch = document.createElement("span");

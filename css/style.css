@@ -115,10 +115,11 @@ body {
 }
 .lang-globe {
   position: absolute;
-  left: 11px;
-  font-size: 0.95rem;
+  left: 10px;
+  width: 16px;
+  height: 16px;
+  color: var(--accent-ink);
   pointer-events: none;
-  line-height: 1;
 }
 .lang-select {
   height: 42px;
@@ -150,7 +151,7 @@ body {
 }
 
 /* Arapça (sağdan sola) küçük düzeltmeler */
-:root[dir="rtl"] .lang-globe { left: auto; right: 11px; }
+:root[dir="rtl"] .lang-globe { left: auto; right: 10px; }
 :root[dir="rtl"] .lang-select {
   padding: 0 32px 0 30px;
   background-position: left 10px center;
