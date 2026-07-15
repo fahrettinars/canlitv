@@ -30,6 +30,8 @@
     if (localStorage.getItem("canlitv_tema") === "light")
       document.documentElement.setAttribute("data-theme", "light");
   </script>
+  <!-- Çoklu dil: tarayıcı diline göre otomatik açılış + nav'da dil seçici -->
+  <script src="js/i18n.js"></script>
 
   <!-- Adsterra Popunder (sayfa başına 1 adet, </head> öncesinde) -->
   <script src="https://pl30348563.effectivecpmnetwork.com/bc/24/83/bc248354409e5d64e98f36b8988e0183.js"></script>
@@ -48,13 +50,17 @@
       <span class="brand-word">CANLI<span>TV</span></span>
     </a>
     <div class="nav-right">
+      <div class="lang-wrap">
+        <span class="lang-globe" aria-hidden="true">🌐</span>
+        <select id="langSelect" class="lang-select" aria-label="Dil seç" title="Dil seç"></select>
+      </div>
       <button id="themeToggle" class="theme-toggle" type="button" title="Tema değiştir" aria-label="Tema değiştir">🌙</button>
       <button id="favShortcut" class="nav-fav" type="button" title="Favorilerim">
-        <span class="star">★</span><span class="fav-label"> FAVORİLER</span>
+        <span class="star">★</span><span class="fav-label" data-i18n="favorites"> FAVORİLER</span>
         <span id="favCount" class="nav-fav-count">0</span>
       </button>
       <div class="nav-search">
-        <input type="search" id="searchInput" placeholder="KANAL ARA" autocomplete="off" aria-label="Kanal ara" />
+        <input type="search" id="searchInput" placeholder="KANAL ARA" data-i18n-ph="search_ph" autocomplete="off" aria-label="Kanal ara" />
         <button id="searchClear" class="search-clear" type="button" aria-label="Aramayı temizle" hidden>×</button>
       </div>
     </div>
@@ -63,14 +69,14 @@
   <!-- ===== HERO ===== -->
   <header class="hero">
     <div class="hero-meta">
-      <span class="live-pill"><span class="dot"></span> CANLI YAYIN</span>
-      <span class="hero-count"><b id="totalCount">0</b> KANAL</span>
+      <span class="live-pill"><span class="dot"></span> <span data-i18n="live_now">CANLI YAYIN</span></span>
+      <span class="hero-count"><b id="totalCount">0</b> <span data-i18n="channels_word">KANAL</span></span>
     </div>
-    <h1 class="hero-title">
+    <h1 class="hero-title" data-i18n-html="hero_title_html">
       TÜRKİYE'NİN<br />
       TÜM KANALLARI<span class="accent">.</span>
     </h1>
-    <p class="hero-sub">
+    <p class="hero-sub" data-i18n-html="hero_sub_html">
       Ulusaldan spora, haberden çocuğa — Türkiye'nin bütün TV kanalları
       <strong>tek ekranda.</strong> Aradığın kanalı saniyeler içinde bul,
       tek tıkla <strong>resmi canlı yayınına</strong> git.
@@ -125,12 +131,12 @@
   <footer class="site-footer">
     <div class="foot-big">CANLI<span>TV</span></div>
     <nav class="foot-links">
-      <a href="index.html">Ana Sayfa</a>
-      <a href="kanallar.html">Kanal Rehberi</a>
-      <a href="hakkimizda.html">Hakkımızda</a>
-      <a href="gizlilik.html">Gizlilik Politikası</a>
+      <a href="index.html" data-i18n="nav_home">Ana Sayfa</a>
+      <a href="kanallar.html" data-i18n="nav_guide">Kanal Rehberi</a>
+      <a href="hakkimizda.html" data-i18n="nav_about">Hakkımızda</a>
+      <a href="gizlilik.html" data-i18n="nav_privacy">Gizlilik Politikası</a>
     </nav>
-    <p>
+    <p data-i18n-html="foot_tagline_html">
       Bu site kanal içeriği barındırmaz. Her kanal, ilgili yayıncının
       <strong>resmi canlı yayın sayfasına</strong> yönlendirir.
     </p>

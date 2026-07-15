@@ -24,6 +24,7 @@
     if (localStorage.getItem("canlitv_tema") === "light")
       document.documentElement.setAttribute("data-theme", "light");
   </script>
+  <script src="../js/i18n.js"></script>
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -37,7 +38,11 @@
       <span class="brand-word">CANLI<span>TV</span></span>
     </a>
     <div class="nav-right">
-      <a href="../index.html" class="nav-fav" style="text-decoration:none">← ANA SAYFA</a>
+      <div class="lang-wrap">
+        <span class="lang-globe" aria-hidden="true">🌐</span>
+        <select id="langSelect" class="lang-select" aria-label="Dil seç" title="Dil seç"></select>
+      </div>
+      <a href="../index.html" class="nav-fav" style="text-decoration:none" data-i18n="back_home">← ANA SAYFA</a>
     </div>
   </nav>
 
@@ -45,7 +50,7 @@
     <div class="kanal-head">
       <div class="kanal-logo"><img src="../assets/logos/sozcu-tv.jpg" alt="Sözcü TV logo" loading="lazy" /></div>
       <div>
-        <div class="kanal-cat">Haber </div>
+        <div class="kanal-cat"><span data-i18n-cat="Haber">Haber</span> </div>
         <h1 class="page-title" style="margin-bottom:10px">Sözcü TV CANLI İZLE</h1>
       </div>
     </div>
@@ -53,27 +58,27 @@
       <p>Sözcü TV, güncel haberleri, son dakika gelişmelerini ve gündem programlarını canlı olarak ekrana taşıyan bir haber kanalıdır. Gündemi anlık takip etmek için Sözcü TV canlı yayınını izleyin.</p>
       <p>
         <a class="watch-big" href="https://www.sozcu.com.tr/sozcu-televizyonu-canli-yayin" target="_blank" rel="noopener noreferrer">
-          ▶ CANLI İZLE
+          ▶ <span data-i18n="watch_live">CANLI İZLE</span>
         </a>
       </p>
-      <p style="color:var(--muted);font-size:0.9rem">
+      <p style="color:var(--muted);font-size:0.9rem" data-i18n="kanal_note">
         Not: CanlıTV içerik barındırmaz; "CANLI İZLE" butonu sizi Sözcü TV kanalının resmi
         yayın sayfasına yönlendirir.
       </p>
 
-      <h2>Benzer Kanallar</h2><div class="benzer-links"><a href="trt-haber.html">TRT Haber</a><a href="ntv.html">NTV</a><a href="cnn-turk.html">CNN Türk</a><a href="haberturk.html">Habertürk</a><a href="a-haber.html">A Haber</a><a href="tgrt-haber.html">TGRT Haber</a><a href="halk-tv.html">Halk TV</a><a href="tele1.html">Tele1</a></div>
+      <h2 data-i18n="similar_channels">Benzer Kanallar</h2><div class="benzer-links"><a href="trt-haber.html">TRT Haber</a><a href="ntv.html">NTV</a><a href="cnn-turk.html">CNN Türk</a><a href="haberturk.html">Habertürk</a><a href="a-haber.html">A Haber</a><a href="tgrt-haber.html">TGRT Haber</a><a href="halk-tv.html">Halk TV</a><a href="tele1.html">Tele1</a></div>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="foot-big">CANLI<span>TV</span></div>
     <nav class="foot-links">
-      <a href="../index.html">Ana Sayfa</a>
-      <a href="../kanallar.html">Kanal Rehberi</a>
-      <a href="../hakkimizda.html">Hakkımızda</a>
-      <a href="../gizlilik.html">Gizlilik Politikası</a>
+      <a href="../index.html" data-i18n="nav_home">Ana Sayfa</a>
+      <a href="../kanallar.html" data-i18n="nav_guide">Kanal Rehberi</a>
+      <a href="../hakkimizda.html" data-i18n="nav_about">Hakkımızda</a>
+      <a href="../gizlilik.html" data-i18n="nav_privacy">Gizlilik Politikası</a>
     </nav>
-    <p>Bu site kanal içeriği barındırmaz; her kanal ilgili yayıncının resmi sayfasına yönlendirir.</p>
+    <p data-i18n="foot_tagline_short">Bu site kanal içeriği barındırmaz; her kanal ilgili yayıncının resmi sayfasına yönlendirir.</p>
   </footer>
 </body>
 </html>

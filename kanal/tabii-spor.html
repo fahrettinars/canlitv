@@ -24,6 +24,7 @@
     if (localStorage.getItem("canlitv_tema") === "light")
       document.documentElement.setAttribute("data-theme", "light");
   </script>
+  <script src="../js/i18n.js"></script>
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -37,7 +38,11 @@
       <span class="brand-word">CANLI<span>TV</span></span>
     </a>
     <div class="nav-right">
-      <a href="../index.html" class="nav-fav" style="text-decoration:none">← ANA SAYFA</a>
+      <div class="lang-wrap">
+        <span class="lang-globe" aria-hidden="true">🌐</span>
+        <select id="langSelect" class="lang-select" aria-label="Dil seç" title="Dil seç"></select>
+      </div>
+      <a href="../index.html" class="nav-fav" style="text-decoration:none" data-i18n="back_home">← ANA SAYFA</a>
     </div>
   </nav>
 
@@ -45,7 +50,7 @@
     <div class="kanal-head">
       <div class="kanal-logo"><img src="../assets/logos/tabii-spor.jpg" alt="Tabii Spor logo" loading="lazy" /></div>
       <div>
-        <div class="kanal-cat">Spor <span class="paid-tag" style="position:static">🔒 ABONELİK</span></div>
+        <div class="kanal-cat"><span data-i18n-cat="Spor">Spor</span> <span class="paid-tag" style="position:static" data-i18n="paid_tag">🔒 ABONELİK</span></div>
         <h1 class="page-title" style="margin-bottom:10px">Tabii Spor CANLI İZLE</h1>
       </div>
     </div>
@@ -53,27 +58,27 @@
       <p>Tabii Spor, canlı maçlar, karşılaşmalar ve spor haberleriyle dolu bir spor kanalıdır. Tabii Spor yayınını izlemek için ilgili sağlayıcıya abonelik gerekir. Tabii Spor yayınını resmi sayfasından takip edebilirsiniz.</p>
       <p>
         <a class="watch-big" href="https://tvplus.com.tr/canli-tv/tabii-spor--4399" target="_blank" rel="noopener noreferrer">
-          ▶ ABONELİK SAYFASI
+          ▶ <span data-i18n="sub_page">ABONELİK SAYFASI</span>
         </a>
       </p>
-      <p style="color:var(--muted);font-size:0.9rem">
+      <p style="color:var(--muted);font-size:0.9rem" data-i18n="kanal_note">
         Not: CanlıTV içerik barındırmaz; "ABONELİK SAYFASI" butonu sizi Tabii Spor kanalının resmi
         yayın sayfasına yönlendirir.
       </p>
 
-      <h2>Benzer Kanallar</h2><div class="benzer-links"><a href="trt-spor.html">TRT Spor</a><a href="trt-spor-yildiz.html">TRT Spor Yıldız</a><a href="a-spor.html">A Spor</a><a href="bein-sports-1.html">beIN Sports 1</a><a href="bein-sports-2.html">beIN Sports 2</a><a href="bein-sports-3.html">beIN Sports 3</a><a href="bein-sports-4.html">beIN Sports 4</a><a href="bein-sports-5.html">beIN Sports 5</a></div>
+      <h2 data-i18n="similar_channels">Benzer Kanallar</h2><div class="benzer-links"><a href="trt-spor.html">TRT Spor</a><a href="trt-spor-yildiz.html">TRT Spor Yıldız</a><a href="a-spor.html">A Spor</a><a href="bein-sports-1.html">beIN Sports 1</a><a href="bein-sports-2.html">beIN Sports 2</a><a href="bein-sports-3.html">beIN Sports 3</a><a href="bein-sports-4.html">beIN Sports 4</a><a href="bein-sports-5.html">beIN Sports 5</a></div>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="foot-big">CANLI<span>TV</span></div>
     <nav class="foot-links">
-      <a href="../index.html">Ana Sayfa</a>
-      <a href="../kanallar.html">Kanal Rehberi</a>
-      <a href="../hakkimizda.html">Hakkımızda</a>
-      <a href="../gizlilik.html">Gizlilik Politikası</a>
+      <a href="../index.html" data-i18n="nav_home">Ana Sayfa</a>
+      <a href="../kanallar.html" data-i18n="nav_guide">Kanal Rehberi</a>
+      <a href="../hakkimizda.html" data-i18n="nav_about">Hakkımızda</a>
+      <a href="../gizlilik.html" data-i18n="nav_privacy">Gizlilik Politikası</a>
     </nav>
-    <p>Bu site kanal içeriği barındırmaz; her kanal ilgili yayıncının resmi sayfasına yönlendirir.</p>
+    <p data-i18n="foot_tagline_short">Bu site kanal içeriği barındırmaz; her kanal ilgili yayıncının resmi sayfasına yönlendirir.</p>
   </footer>
 </body>
 </html>

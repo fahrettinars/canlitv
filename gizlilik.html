@@ -14,6 +14,7 @@
     if (localStorage.getItem("canlitv_tema") === "light")
       document.documentElement.setAttribute("data-theme", "light");
   </script>
+  <script src="js/i18n.js"></script>
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -28,64 +29,68 @@
       <span class="brand-word">CANLI<span>TV</span></span>
     </a>
     <div class="nav-right">
-      <a href="index.html" class="nav-fav" style="text-decoration:none">← ANA SAYFA</a>
+      <div class="lang-wrap">
+        <span class="lang-globe" aria-hidden="true">🌐</span>
+        <select id="langSelect" class="lang-select" aria-label="Dil seç" title="Dil seç"></select>
+      </div>
+      <a href="index.html" class="nav-fav" style="text-decoration:none" data-i18n="back_home">← ANA SAYFA</a>
     </div>
   </nav>
 
   <main class="page">
-    <h1 class="page-title">GİZLİLİK POLİTİKASI<span class="accent">.</span></h1>
+    <h1 class="page-title"><span data-i18n="pr_title">GİZLİLİK POLİTİKASI</span><span class="accent">.</span></h1>
     <div class="page-content">
-      <p>
+      <p data-i18n-html="pr_p1_html">
         Bu gizlilik politikası, <strong>canlitvkanallari.site</strong> (CanlıTV) sitesini
         ziyaret ettiğinde verilerinin nasıl işlendiğini açıklar. Sitemizi kullanarak bu
         politikayı kabul etmiş olursun.
       </p>
 
-      <h2>Kişisel veri toplamıyoruz</h2>
-      <p>
+      <h2 data-i18n="pr_h_nodata">Kişisel veri toplamıyoruz</h2>
+      <p data-i18n-html="pr_p_nodata_html">
         CanlıTV statik bir sitedir; sunucularında <strong>ad, e-posta, telefon gibi kişisel
         verileri toplamaz, saklamaz veya satmaz.</strong> Üyelik veya giriş sistemi yoktur.
       </p>
 
-      <h2>Tarayıcı hafızası (localStorage)</h2>
-      <p>
+      <h2 data-i18n="pr_h_ls">Tarayıcı hafızası (localStorage)</h2>
+      <p data-i18n-html="pr_p_ls_html">
         Favori kanalların ve tema tercihin (açık/koyu) yalnızca <strong>senin
         tarayıcında</strong> saklanır. Bu bilgiler bize veya üçüncü taraflara gönderilmez;
         istediğin zaman tarayıcı verilerini temizleyerek silebilirsin.
       </p>
 
-      <h2>Çerezler ve reklamlar</h2>
-      <p>
+      <h2 data-i18n="pr_h_cookies">Çerezler ve reklamlar</h2>
+      <p data-i18n-html="pr_p_cookies_html">
         Sitemizde üçüncü taraf reklam ağları (örneğin <strong>Adsterra</strong>) yer alır.
         Bu ağlar; reklamları göstermek ve performanslarını ölçmek için <strong>çerezler</strong>
         veya benzer teknolojiler kullanabilir. Bu çerezler reklam sağlayıcısı tarafından
         yönetilir ve onların gizlilik politikalarına tabidir.
       </p>
-      <p>
+      <p data-i18n="pr_p_cookies2">
         Reklam çerezlerini tarayıcı ayarlarından sınırlayabilir veya engelleyebilirsin.
         Dilersen bir reklam engelleyici de kullanabilirsin.
       </p>
 
-      <h2>Dış bağlantılar</h2>
-      <p>
+      <h2 data-i18n="pr_h_ext">Dış bağlantılar</h2>
+      <p data-i18n-html="pr_p_ext_html">
         Bir kanala tıkladığında, ilgili yayıncının <strong>kendi web sitesine</strong>
         yönlendirilirsin. Bu sitelerin içeriğinden ve gizlilik uygulamalarından CanlıTV
         sorumlu değildir; her sitenin kendi gizlilik politikası geçerlidir.
       </p>
 
-      <h2>İçerik ve telif</h2>
-      <p>
+      <h2 data-i18n="pr_h_copy">İçerik ve telif</h2>
+      <p data-i18n="pr_p_copy">
         CanlıTV hiçbir yayın içeriği barındırmaz; yalnızca resmi kaynaklara bağlantı verir.
         Tüm haklar ilgili yayıncı kuruluşlara aittir.
       </p>
 
-      <h2>Değişiklikler</h2>
-      <p>
+      <h2 data-i18n="pr_h_changes">Değişiklikler</h2>
+      <p data-i18n="pr_p_changes">
         Bu politika zaman zaman güncellenebilir. Güncel sürüm her zaman bu sayfada yayınlanır.
       </p>
 
-      <h2>İletişim</h2>
-      <p>
+      <h2 data-i18n="pr_h_contact">İletişim</h2>
+      <p data-i18n-html="pr_p_contact_html">
         Sorularınız için: <a href="mailto:fahrettinyedek7@gmail.com">fahrettinyedek7@gmail.com</a>
       </p>
     </div>
@@ -94,12 +99,12 @@
   <footer class="site-footer">
     <div class="foot-big">CANLI<span>TV</span></div>
     <nav class="foot-links">
-      <a href="index.html">Ana Sayfa</a>
-      <a href="kanallar.html">Kanal Rehberi</a>
-      <a href="hakkimizda.html">Hakkımızda</a>
-      <a href="gizlilik.html">Gizlilik Politikası</a>
+      <a href="index.html" data-i18n="nav_home">Ana Sayfa</a>
+      <a href="kanallar.html" data-i18n="nav_guide">Kanal Rehberi</a>
+      <a href="hakkimizda.html" data-i18n="nav_about">Hakkımızda</a>
+      <a href="gizlilik.html" data-i18n="nav_privacy">Gizlilik Politikası</a>
     </nav>
-    <p>Bu site kanal içeriği barındırmaz; her kanal ilgili yayıncının resmi sayfasına yönlendirir.</p>
+    <p data-i18n="foot_tagline_short">Bu site kanal içeriği barındırmaz; her kanal ilgili yayıncının resmi sayfasına yönlendirir.</p>
   </footer>
 </body>
 </html>

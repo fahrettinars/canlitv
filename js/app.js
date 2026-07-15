@@ -8,6 +8,9 @@
 (function () {
   "use strict";
 
+  // Çeviri erişimi (i18n.js head'de yüklenir). Emniyet için yedekli.
+  const I = window.I18N || { t: function (k) { return k; }, cat: function (k) { return k; }, lang: "tr" };
+
   const grid = document.getElementById("channelGrid");
   const categoryBar = document.getElementById("categoryBar");
   const searchInput = document.getElementById("searchInput");
@@ -63,7 +66,7 @@
       const chip = document.createElement("button");
       chip.className = "chip" + (kat === aktifKategori ? " active" : "");
       chip.innerHTML =
-        `${kat === "Favoriler" ? "★ " : ""}${kat}<span class="chip-count">${kategoriSayisi(kat)}</span>`;
+        `${kat === "Favoriler" ? "★ " : ""}${I.cat(kat)}<span class="chip-count">${kategoriSayisi(kat)}</span>`;
       chip.addEventListener("click", () => {
         aktifKategori = kat;
         localStorage.setItem(CAT_KEY, kat);
@@ -126,7 +129,7 @@
     if (kanal.ucretli) {
       const pay = document.createElement("span");
       pay.className = "paid-tag";
-      pay.textContent = "🔒 ABONELİK";
+      pay.textContent = I.t("paid_tag");
       left.appendChild(pay);
     }
     top.append(left, fav);
@@ -169,8 +172,8 @@
     const watch = document.createElement("span");
     watch.className = "watch" + (kanal.ucretli ? " watch-paid" : "");
     let watchText;
-    if (kanal.ucretli) watchText = linkVar ? "ABONELİK SAYFASI" : "ABONELİK GEREKLİ";
-    else watchText = linkVar ? "CANLI İZLE" : "LİNK YAKINDA";
+    if (kanal.ucretli) watchText = linkVar ? I.t("sub_page") : I.t("sub_required");
+    else watchText = linkVar ? I.t("watch_live") : I.t("link_soon");
     watch.innerHTML = watchText + ' <span class="arrow">→</span>';
 
     // Link henüz yoksa boş sekme açma
@@ -207,16 +210,14 @@
 
     if (sectionTitle) {
       sectionTitle.textContent =
-        aktifKategori === "Tümü" ? "TÜM KANALLAR" : aktifKategori.toUpperCase();
+        aktifKategori === "Tümü" ? I.t("section_all") : I.cat(aktifKategori).toUpperCase();
     }
-    if (resultCount) resultCount.textContent = liste.length + " KANAL";
+    if (resultCount) resultCount.textContent = liste.length + " " + I.t("channels_word");
 
     if (liste.length === 0) {
       emptyState.hidden = false;
       emptyState.textContent =
-        aktifKategori === "Favoriler"
-          ? "Henüz favori kanalın yok. Kartlardaki ☆ yıldıza tıklayarak ekle."
-          : "Aramanıza uygun kanal bulunamadı.";
+        aktifKategori === "Favoriler" ? I.t("empty_fav") : I.t("empty_search");
       return;
     }
     emptyState.hidden = true;
@@ -285,7 +286,7 @@
     const track = document.getElementById("marqueeTrack");
     if (!track) return;
     const kats = Array.from(new Set(KANALLAR.map((k) => k.kategori)));
-    const parcalar = [KANALLAR.length + " CANLI KANAL", ...kats.map((k) => k.toUpperCase())];
+    const parcalar = [KANALLAR.length + " " + I.t("live_channels_suffix"), ...kats.map((k) => I.cat(k))];
     const blok = parcalar
       .map((p) => `<span>${p} <span class="sep">✦</span></span>`)
       .join("");
@@ -324,6 +325,15 @@
       btn.classList.toggle("show", window.scrollY > 500);
     }, { passive: true });
     btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+  }
+
+  // Dil değişince dinamik içeriği yeniden çiz (kategori, ızgara, kayan şerit)
+  if (window.I18N) {
+    window.I18N.onChange = function () {
+      kategorileriCiz();
+      kanallariCiz();
+      marqueeKur();
+    };
   }
 
   // İlk çizim

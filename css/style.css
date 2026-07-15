@@ -107,6 +107,59 @@ body {
 }
 .theme-toggle:hover { border-color: var(--accent-ink); transform: rotate(-12deg); }
 
+/* ---- Dil seçici ---- */
+.lang-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.lang-globe {
+  position: absolute;
+  left: 11px;
+  font-size: 0.95rem;
+  pointer-events: none;
+  line-height: 1;
+}
+.lang-select {
+  height: 42px;
+  padding: 0 30px 0 32px;
+  background: transparent;
+  border: 1px solid var(--border-hi);
+  color: var(--text);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.76rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* sağdaki ok işareti (chevron) */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'><path d='M2 4l4 4 4-4' fill='none' stroke='%238a8a8a' stroke-width='2'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  transition: border-color 0.18s;
+}
+.lang-select:hover,
+.lang-select:focus { border-color: var(--accent-ink); }
+.lang-select option {
+  background: var(--bg-2);
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Arapça (sağdan sola) küçük düzeltmeler */
+:root[dir="rtl"] .lang-globe { left: auto; right: 11px; }
+:root[dir="rtl"] .lang-select {
+  padding: 0 32px 0 30px;
+  background-position: left 10px center;
+}
+:root[dir="rtl"] .hero-sub { padding-left: 0; padding-right: 22px; }
+:root[dir="rtl"] .hero-sub::before { left: auto; right: 0; }
+:root[dir="rtl"] .chip-count { margin-left: 0; margin-right: 6px; }
+:root[dir="rtl"] .nav-fav .star { order: 2; }
+
 .nav-fav {
   display: inline-flex;
   align-items: center;
@@ -697,6 +750,7 @@ html { scrollbar-color: #2a2a2a var(--bg); }
   .brand-mark { width: 26px; height: 26px; }
   .nav-right { flex-basis: 100%; flex-wrap: wrap; justify-content: flex-start; gap: 8px; }
   .theme-toggle { width: 38px; height: 38px; font-size: 1rem; }
+  .lang-select { height: 38px; font-size: 0.72rem; padding: 0 26px 0 30px; }
   .nav-fav { padding: 8px 11px; font-size: 0.72rem; gap: 5px; }
   .nav-fav .fav-label { display: none; }               /* sadece ★ + sayı */
   .nav-search { flex: 1 1 140px; display: flex; }        /* arama görünür + boşluğu doldurur */

@@ -76,8 +76,9 @@ function kanalSayfasi(k, digerleri) {
   const desc = aciklama(k);
   const linkVar = k.url && k.url !== "#";
   const btnText = k.ucretli ? (linkVar ? "ABONELİK SAYFASI" : "ABONELİK GEREKLİ") : (linkVar ? "CANLI İZLE" : "LİNK YAKINDA");
+  const btnKey = k.ucretli ? (linkVar ? "sub_page" : "sub_required") : (linkVar ? "watch_live" : "link_soon");
   const logo = logoUrl(k.logo);
-  const rozet = k.ucretli ? `<span class="paid-tag" style="position:static">🔒 ABONELİK</span>` : "";
+  const rozet = k.ucretli ? `<span class="paid-tag" style="position:static" data-i18n="paid_tag">🔒 ABONELİK</span>` : "";
 
   // Aynı kategoriden 6 kanal (iç bağlantı → SEO)
   const benzer = digerleri
@@ -112,6 +113,7 @@ function kanalSayfasi(k, digerleri) {
     if (localStorage.getItem("canlitv_tema") === "light")
       document.documentElement.setAttribute("data-theme", "light");
   </script>
+  <script src="../js/i18n.js"></script>
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -125,7 +127,11 @@ function kanalSayfasi(k, digerleri) {
       <span class="brand-word">CANLI<span>TV</span></span>
     </a>
     <div class="nav-right">
-      <a href="../index.html" class="nav-fav" style="text-decoration:none">← ANA SAYFA</a>
+      <div class="lang-wrap">
+        <span class="lang-globe" aria-hidden="true">🌐</span>
+        <select id="langSelect" class="lang-select" aria-label="Dil seç" title="Dil seç"></select>
+      </div>
+      <a href="../index.html" class="nav-fav" style="text-decoration:none" data-i18n="back_home">← ANA SAYFA</a>
     </div>
   </nav>
 
@@ -133,7 +139,7 @@ function kanalSayfasi(k, digerleri) {
     <div class="kanal-head">
       ${logo ? `<div class="kanal-logo"><img src="${logo}" alt="${k.ad} logo" loading="lazy" /></div>` : ""}
       <div>
-        <div class="kanal-cat">${k.kategori} ${rozet}</div>
+        <div class="kanal-cat"><span data-i18n-cat="${k.kategori}">${k.kategori}</span> ${rozet}</div>
         <h1 class="page-title" style="margin-bottom:10px">${k.ad} CANLI İZLE</h1>
       </div>
     </div>
@@ -141,27 +147,27 @@ function kanalSayfasi(k, digerleri) {
       <p>${desc}</p>
       <p>
         <a class="watch-big" href="${linkVar ? k.url : "#"}" ${linkVar ? 'target="_blank" rel="noopener noreferrer"' : ""}>
-          ▶ ${btnText}
+          ▶ <span data-i18n="${btnKey}">${btnText}</span>
         </a>
       </p>
-      <p style="color:var(--muted);font-size:0.9rem">
+      <p style="color:var(--muted);font-size:0.9rem" data-i18n="kanal_note">
         Not: CanlıTV içerik barındırmaz; "${btnText}" butonu sizi ${k.ad} kanalının resmi
         yayın sayfasına yönlendirir.
       </p>
 
-      ${benzer ? `<h2>Benzer Kanallar</h2><div class="benzer-links">${benzer}</div>` : ""}
+      ${benzer ? `<h2 data-i18n="similar_channels">Benzer Kanallar</h2><div class="benzer-links">${benzer}</div>` : ""}
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="foot-big">CANLI<span>TV</span></div>
     <nav class="foot-links">
-      <a href="../index.html">Ana Sayfa</a>
-      <a href="../kanallar.html">Kanal Rehberi</a>
-      <a href="../hakkimizda.html">Hakkımızda</a>
-      <a href="../gizlilik.html">Gizlilik Politikası</a>
+      <a href="../index.html" data-i18n="nav_home">Ana Sayfa</a>
+      <a href="../kanallar.html" data-i18n="nav_guide">Kanal Rehberi</a>
+      <a href="../hakkimizda.html" data-i18n="nav_about">Hakkımızda</a>
+      <a href="../gizlilik.html" data-i18n="nav_privacy">Gizlilik Politikası</a>
     </nav>
-    <p>Bu site kanal içeriği barındırmaz; her kanal ilgili yayıncının resmi sayfasına yönlendirir.</p>
+    <p data-i18n="foot_tagline_short">Bu site kanal içeriği barındırmaz; her kanal ilgili yayıncının resmi sayfasına yönlendirir.</p>
   </footer>
 </body>
 </html>
@@ -175,7 +181,7 @@ function kanallarSayfasi() {
     const items = KANALLAR.filter((k) => k.kategori === kat)
       .map((k) => `<li><a href="kanal/${slug(k.ad)}.html">${k.ad} canlı izle</a></li>`)
       .join("");
-    return `<h2>${kat}</h2><ul class="rehber-list">${items}</ul>`;
+    return `<h2 data-i18n-cat="${kat}">${kat}</h2><ul class="rehber-list">${items}</ul>`;
   }).join("");
 
   return `<!DOCTYPE html>
@@ -195,6 +201,7 @@ function kanallarSayfasi() {
     if (localStorage.getItem("canlitv_tema") === "light")
       document.documentElement.setAttribute("data-theme", "light");
   </script>
+  <script src="js/i18n.js"></script>
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -208,25 +215,29 @@ function kanallarSayfasi() {
       <span class="brand-word">CANLI<span>TV</span></span>
     </a>
     <div class="nav-right">
-      <a href="index.html" class="nav-fav" style="text-decoration:none">← ANA SAYFA</a>
+      <div class="lang-wrap">
+        <span class="lang-globe" aria-hidden="true">🌐</span>
+        <select id="langSelect" class="lang-select" aria-label="Dil seç" title="Dil seç"></select>
+      </div>
+      <a href="index.html" class="nav-fav" style="text-decoration:none" data-i18n="back_home">← ANA SAYFA</a>
     </div>
   </nav>
   <main class="page">
-    <h1 class="page-title">KANAL REHBERİ<span class="accent">.</span></h1>
+    <h1 class="page-title"><span data-i18n="kr_title">KANAL REHBERİ</span><span class="accent">.</span></h1>
     <div class="page-content">
-      <p>Türkiye'deki tüm TV kanallarının canlı yayın sayfaları kategorilere göre aşağıdadır. İzlemek istediğin kanala tıkla.</p>
+      <p data-i18n="kr_intro">Türkiye'deki tüm TV kanallarının canlı yayın sayfaları kategorilere göre aşağıdadır. İzlemek istediğin kanala tıkla.</p>
       ${bloklar}
     </div>
   </main>
   <footer class="site-footer">
     <div class="foot-big">CANLI<span>TV</span></div>
     <nav class="foot-links">
-      <a href="index.html">Ana Sayfa</a>
-      <a href="kanallar.html">Kanal Rehberi</a>
-      <a href="hakkimizda.html">Hakkımızda</a>
-      <a href="gizlilik.html">Gizlilik Politikası</a>
+      <a href="index.html" data-i18n="nav_home">Ana Sayfa</a>
+      <a href="kanallar.html" data-i18n="nav_guide">Kanal Rehberi</a>
+      <a href="hakkimizda.html" data-i18n="nav_about">Hakkımızda</a>
+      <a href="gizlilik.html" data-i18n="nav_privacy">Gizlilik Politikası</a>
     </nav>
-    <p>Bu site kanal içeriği barındırmaz; her kanal ilgili yayıncının resmi sayfasına yönlendirir.</p>
+    <p data-i18n="foot_tagline_short">Bu site kanal içeriği barındırmaz; her kanal ilgili yayıncının resmi sayfasına yönlendirir.</p>
   </footer>
 </body>
 </html>
